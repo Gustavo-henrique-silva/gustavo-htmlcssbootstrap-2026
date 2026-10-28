@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Mtec Informática para Internet</title>
+  <title>Mtec Informática para Internet | ETEC Presidente Venceslau</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/bootstrap.css" rel="stylesheet">
 
   <style>
-
     :root {
       --mtec-cyan: #00e5ff;
       --mtec-cyan-light: #7df3ff;
@@ -22,7 +21,6 @@
       --mtec-text: #e6eefc;
       --mtec-text-soft: #9fb4d3;
     }
-
 
     * { box-sizing: border-box; }
 
@@ -52,7 +50,6 @@
       outline: 3px solid var(--mtec-cyan-light);
       outline-offset: 2px;
     }
-
 
     .navbar-mtec {
       min-height: 80px;
@@ -95,26 +92,24 @@
 
     .navbar-toggler { border-color: var(--mtec-cyan); }
 
-
     .btn-matricula {
-      --bs-btn-color: #fff;
-      --bs-btn-hover-color: #fff;
-      --bs-btn-active-color: #fff;
-
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: .65rem 1.4rem;
-      font-size: .95rem;
+      font-size: .85rem;
       font-weight: 700;
       line-height: 1.2;
       white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: .04em;
       text-shadow: 0 1px 2px rgba(0, 0, 0, .45);
       color: #fff;
       background: linear-gradient(180deg, var(--mtec-blue-500) 0%, #0f4fd6 100%);
       border: 1px solid var(--mtec-cyan);
       border-radius: 8px;
       transition: transform .15s, box-shadow .15s, background .15s;
+      text-decoration: none;
     }
 
     .btn-matricula:hover,
@@ -124,18 +119,6 @@
       box-shadow: 0 4px 14px rgba(0, 229, 255, .4);
       transform: translateY(-1px);
     }
-
-    .btn-matricula:active {
-      color: #fff;
-      transform: translateY(0);
-    }
-
-    .navbar .btn-matricula {
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      font-size: .85rem;
-    }
-
 
     .header-foto {
       background-image: url('images/bannerteste.png');
@@ -147,7 +130,6 @@
       border-bottom: 2px solid var(--mtec-cyan);
       box-shadow: 0 10px 40px rgba(0, 229, 255, .18);
     }
-
 
     .banner {
       padding: 70px 0;
@@ -188,12 +170,6 @@
       100% { transform: translateY(0); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .mtec-logo { animation: none; }
-      html { scroll-behavior: auto; }
-    }
-
-
     .titulo-ciano {
       color: var(--mtec-cyan);
       font-weight: 700;
@@ -230,11 +206,7 @@
     }
 
     .card-mtec {
-      --bs-card-bg: var(--mtec-blue-800);
-      --bs-card-border-color: var(--mtec-cyan);
-      --bs-card-cap-bg: rgba(0, 229, 255, .12);
-      --bs-card-color: var(--mtec-text);
-
+      background-color: var(--mtec-blue-800);
       border: 1px solid var(--mtec-cyan);
       border-radius: 12px !important;
       overflow: hidden;
@@ -251,6 +223,7 @@
       color: var(--mtec-cyan-light);
       font-weight: 600;
       border-bottom: 1px solid rgba(0, 229, 255, .45);
+      background-color: rgba(0, 229, 255, .12);
     }
 
     .card-mtec .card-title {
@@ -275,6 +248,8 @@
       border-radius: 8px;
       padding: .45rem 1rem;
       transition: background .15s, color .15s;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .btn-card-mtec:hover,
@@ -283,55 +258,13 @@
       background: var(--mtec-cyan);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .card-mtec { transition: none; }
-      .card-mtec:hover { transform: none; }
-    }
-
     @media (max-width: 991.98px) {
       body { padding-top: 75px; }
       .navbar-mtec { min-height: 75px; }
-
-      .logo-navbar,
-      .navbar-brand img { width: 56px; height: 56px; }
-
+      .logo-navbar, .navbar-brand img { width: 56px; height: 56px; }
       .banner { padding: 50px 0; text-align: center; }
       .banner h1 { font-size: 2.2rem; }
-      .banner .lead { margin-right: auto; margin-left: auto; font-size: 1rem; }
-
       #carouselMtec .carousel-item img { height: 350px; }
-    }
-
-    @media (max-width: 767.98px) {
-      .navbar .btn-matricula {
-        width: 100%;
-        margin: .5rem 0 .75rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      body { padding-top: 70px; }
-      .navbar-mtec { min-height: 70px; }
-
-      .logo-navbar,
-      .navbar-brand img { width: 50px; height: 50px; }
-
-      .banner { padding: 40px 20px 45px; }
-      .banner h1 { font-size: 1.8rem; }
-      .banner .text-uppercase { font-size: .8rem; }
-
-      #carouselMtec .carousel-item img { height: 250px; }
-
-      .card-group { display: block; }
-      .card-group .card { margin-bottom: 1rem; }
-    }
-
-    @media (max-width: 400px) {
-      .banner { padding-right: 15px; padding-left: 15px; }
-      .banner h1 { font-size: 1.6rem; }
-
-      .logo-navbar,
-      .navbar-brand img { width: 46px; height: 46px; }
     }
   </style>
 </head>
@@ -353,14 +286,15 @@
       </button>
       <div class="collapse navbar-collapse" id="menuPrincipal">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link" href="primeiro.html" aria-current="page">1°. Série</a></li>
+          <li class="nav-item"><a class="nav-link" href="primeiro.html">1°. Série</a></li>
           <li class="nav-item"><a class="nav-link" href="segundo.html">2°. Série</a></li>
           <li class="nav-item"><a class="nav-link" href="terceiro.html">3°. Série</a></li>
         </ul>
-        <a href="#" class="btn btn-matricula">Matricule-se</a>
+        <a href="https://vestibulinho.etec.sp.gov.br/home/" class="btn btn-matricula" target="_blank" rel="noopener noreferrer">Matricule-se</a>
       </div>
     </div>
   </nav>
+  
   <header class="header-foto" role="img" aria-label="Banner Mtec Informática para Internet"></header>
 
   <section class="banner">
@@ -417,7 +351,7 @@
         <div class="card-header">1°. Série</div>
         <div class="card-body">
           <h3 class="card-title h5">Primeiros passos</h3>
-          <p class="card-text">Conteúdo da 1ª série: lógica de programação, HTML e CSS. Edite este texto.</p>
+          <p class="card-text">Conteúdo com Arte Digital, PTIC, Programação e Algoritmo, Banco de Dados e Interface Web I.</p>
         </div>
         <div class="card-footer">
           <a href="primeiro.html" class="btn btn-card-mtec">Ver mais</a>
@@ -428,7 +362,7 @@
         <div class="card-header">2°. Série</div>
         <div class="card-body">
           <h3 class="card-title h5">Evoluindo</h3>
-          <p class="card-text">Conteúdo da 2ª série: JavaScript e sites interativos. Edite este texto.</p>
+          <p class="card-text">Conteúdo da 2ª série: JavaScript avançado, interatividade web e aplicações integradas.</p>
         </div>
         <div class="card-footer">
           <a href="segundo.html" class="btn btn-card-mtec">Ver mais</a>
@@ -439,7 +373,7 @@
         <div class="card-header">3°. Série</div>
         <div class="card-body">
           <h3 class="card-title h5">Sistema no ar</h3>
-          <p class="card-text">Conteúdo da 3ª série: sistemas completos e projeto final. Edite este texto.</p>
+          <p class="card-text">Conteúdo da 3ª série: sistemas completas Full Stack e o Projeto de Conclusão (TCC).</p>
         </div>
         <div class="card-footer">
           <a href="terceiro.html" class="btn btn-card-mtec">Ver mais</a>
@@ -448,9 +382,9 @@
     </div>
   </section>
 
-  <main class="container pb-5">
+  <main class="container pb-5 text-center">
     <h2 class="titulo-ciano">Mtec Informática para Internet</h2>
-    <p class="texto-suave">Página Principal do Website</p>
+    <p class="texto-suave">ETEC Prof. Milton Gazzetti - Presidente Venceslau</p>
   </main>
 
   <script src="js/bootstrap.bundle.min.js"></script>

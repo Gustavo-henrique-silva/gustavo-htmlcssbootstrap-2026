@@ -1,46 +1,202 @@
 <!DOCTYPE html>
-<html lang="pt-br"></html>
-<html>
-    <head>
-        <title>Mtec Informática para Internet</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link href="css/bootstrap.css" rel="stylesheet">
-    </head>
-      <body style="padding-top: 90px;">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div class="container">
-          <!--<a class="navbar-brand" href="#">Início</a>-->
-          <a class="navbar-brand" href="index.html">
-            <img src="images/Logoteste.png" alt="Lobo Símbolo daInformática " height="70" class="rounded-circle"/>
-          </a>
-            <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuPrincipal"
-            aria-controls="menuPrincipal"
-            aria-expanded="false"
-            aria-label="Abrir Menu"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-            <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="primeiro.html">1o. Série</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="segundo.html">2o. Série</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link active" href="terceiro.html" aria-current="page">3o. Série</a>
-            </li>
+<html lang="pt-br">
+<head>
+  <title>3ª Série - Mtec Informática para Internet | ETEC Presidente Venceslau</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --mtec-cyan: #00e5ff;
+      --mtec-cyan-light: #7df3ff;
+      --mtec-cyan-deep: #0aa8ff;
+      --mtec-blue-900: #020a1f;
+      --mtec-blue-800: #04122e;
+      --mtec-blue-700: #081c47;
+      --mtec-blue-600: #0d2a6b;
+      --mtec-blue-500: #1e6bff;
+      --mtec-text: #e6eefc;
+      --mtec-text-soft: #9fb4d3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      padding-top: 80px;
+      max-width: 100%;
+      overflow-x: hidden;
+      color: var(--mtec-text);
+      background-color: var(--mtec-blue-900);
+      background-image:
+        radial-gradient(ellipse at 15% 0%, rgba(30, 107, 255, .28) 0%, transparent 55%),
+        radial-gradient(ellipse at 90% 45%, rgba(0, 229, 255, .12) 0%, transparent 50%),
+        linear-gradient(180deg, var(--mtec-blue-800) 0%, var(--mtec-blue-900) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--mtec-cyan-light);
+      outline-offset: 2px;
+    }
+
+    .navbar-mtec {
+      min-height: 80px;
+      background: linear-gradient(90deg, var(--mtec-blue-800) 0%, var(--mtec-blue-700) 55%, var(--mtec-blue-600) 100%);
+      border-bottom: 2px solid var(--mtec-cyan);
+      box-shadow: 0 4px 24px rgba(0, 229, 255, .12);
+    }
+
+    .navbar-brand { display: flex; align-items: center; padding: 0; }
+
+    .logo-navbar, .navbar-brand img {
+      display: block;
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 2px solid var(--mtec-cyan);
+      box-shadow: 0 0 14px rgba(0, 229, 255, .45);
+    }
+
+    .navbar .nav-link {
+      color: var(--mtec-cyan);
+      font-weight: 600;
+      letter-spacing: .04em;
+      padding: .5rem .9rem;
+      border-radius: 6px;
+      transition: color .2s, background-color .2s;
+    }
+
+    .navbar .nav-link:hover, .navbar .nav-link:focus, .navbar .nav-link.active {
+      color: var(--mtec-cyan-light);
+      background-color: rgba(30, 107, 255, .35);
+    }
+
+    .navbar-toggler { border-color: var(--mtec-cyan); }
+
+    .btn-matricula {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .65rem 1.4rem;
+      font-size: .85rem;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .45);
+      color: #fff;
+      background: linear-gradient(180deg, var(--mtec-blue-500) 0%, #0f4fd6 100%);
+      border: 1px solid var(--mtec-cyan);
+      border-radius: 8px;
+      transition: transform .15s, box-shadow .15s, background .15s;
+      text-decoration: none;
+    }
+
+    .btn-matricula:hover, .btn-matricula:focus {
+      color: #fff;
+      background: linear-gradient(180deg, #3b82ff 0%, var(--mtec-cyan-deep) 100%);
+      box-shadow: 0 4px 14px rgba(0, 229, 255, .4);
+      transform: translateY(-1px);
+    }
+
+    .header-foto {
+      background-image: url('images/bannerteste.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 3 / 1;
+      min-height: 160px;
+      border-bottom: 2px solid var(--mtec-cyan);
+      box-shadow: 0 10px 40px rgba(0, 229, 255, .18);
+    }
+
+    .titulo-ciano {
+      color: var(--mtec-cyan);
+      font-weight: 700;
+      text-shadow: 0 0 18px rgba(0, 229, 255, .35);
+    }
+
+    .texto-suave { color: var(--mtec-text-soft); }
+
+    .card-mtec {
+      background-color: var(--mtec-blue-800);
+      border: 1px solid var(--mtec-cyan);
+      border-radius: 12px;
+      box-shadow: 0 0 22px rgba(0, 229, 255, .10);
+    }
+
+    @media (max-width: 991.98px) {
+      body { padding-top: 75px; }
+      .navbar-mtec { min-height: 75px; }
+      .logo-navbar, .navbar-brand img { width: 56px; height: 56px; }
+    }
+  </style>
+</head>
+
+<body data-bs-theme="dark">
+
+  <nav class="navbar navbar-expand-lg navbar-mtec fixed-top text-uppercase">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logoteste.png" alt="Lobo símbolo da Informática" class="logo-navbar">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="primeiro.html">1°. Série</a></li>
+          <li class="nav-item"><a class="nav-link" href="segundo.html">2°. Série</a></li>
+          <li class="nav-item"><a class="nav-link active" href="terceiro.html" aria-current="page">3°. Série</a></li>
+        </ul>
+        <a href="https://vestibulinho.etec.sp.gov.br/home/" class="btn btn-matricula" target="_blank" rel="noopener noreferrer">Matricule-se</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-foto" role="img" aria-label="Banner Mtec Informática para Internet"></header>
+
+  <main class="container py-5">
+    <p class="text-uppercase small fw-semibold titulo-ciano mb-2">ETEC Prof. Milton Gazzetti - Presidente Venceslau</p>
+    <h1 class="display-5 fw-bold mb-3">3ª Série - Sistemas Completos & TCC</h1>
+    <p class="texto-suave lead mb-5">
+      O ápice do curso técnico! Na terceira série os alunos integram todo o conhecimento adquirido para desenvolver sistemas web completos e o Projeto de Conclusão de Curso (TCC).
+    </p>
+
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="card card-mtec p-4 h-100">
+          <h3 class="titulo-ciano h4 mb-3">💻 O que se estuda na 3ª Série?</h3>
+          <ul class="texto-suave mb-0 lh-lg">
+            <li><strong>Desenvolvimento Full Stack:</strong> Integração completa entre front-end e back-end para sistemas web robustos.</li>
+            <li><strong>Banco de Dados Avançado:</strong> Consultas complexas, segurança de dados e gerenciamento de servidores.</li>
+            <li><strong>Gerenciamento de Projetos:</strong> Metodologias para estruturação de software corporativo e trabalho em equipe.</li>
+            <li><strong>Publicação e Deploy:</strong> Como colocar sistemas reais e funcionais no ar para acesso público.</li>
           </ul>
-          <a href="#" class="btn btn-primary">Matricula-se</a>
-            </div>
         </div>
-      </nav>
-          <h1 class="text-primary">Mtec Informática para Internet</h1>
-          <p>3a. Série-2026</p>
-         <script src="js/bootstrap.bundle.min.js"></script>
-    </body>
+      </div>
+      <div class="col-lg-5">
+        <div class="card card-mtec p-4 h-100">
+          <h3 class="titulo-ciano h4 mb-3">🏆 O Projeto Final (TCC)</h3>
+          <p class="texto-suave">
+            É o momento em que a turma desenvolve sistemas inovadores para solucionar problemas reais da comunidade ou de empresas de Presidente Venceslau e região, coroando a formação técnica na ETEC.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
