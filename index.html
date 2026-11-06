@@ -258,6 +258,47 @@
       background: var(--mtec-cyan);
     }
 
+    /* Estilização do Offcanvas com a cara do site */
+    .offcanvas-mtec {
+      background: linear-gradient(180deg, var(--mtec-blue-800) 0%, var(--mtec-blue-900) 100%);
+      border-right: 2px solid var(--mtec-cyan);
+      box-shadow: 4px 0 30px rgba(0, 229, 255, 0.2);
+      color: var(--mtec-text);
+    }
+
+    .offcanvas-mtec .offcanvas-header {
+      border-bottom: 1px solid rgba(0, 229, 255, 0.3);
+      background-color: rgba(0, 229, 255, 0.05);
+    }
+
+    .offcanvas-mtec .offcanvas-title {
+      color: var(--mtec-cyan);
+      font-weight: 700;
+      text-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+    }
+
+    .offcanvas-mtec .btn-close {
+      filter: invert(1) drop-shadow(0 0 4px var(--mtec-cyan));
+    }
+
+    /* Links personalizados para o menu diferente */
+    .offcanvas-mtec .list-group-item {
+      background-color: rgba(8, 28, 71, 0.6);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      color: var(--mtec-text);
+      font-weight: 500;
+      border-radius: 8px !important;
+      margin-bottom: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .offcanvas-mtec .list-group-item:hover {
+      background-color: rgba(0, 229, 255, 0.15);
+      color: var(--mtec-cyan-light);
+      border-color: var(--mtec-cyan);
+      transform: translateX(4px);
+    }
+
     @media (max-width: 991.98px) {
       body { padding-top: 75px; }
       .navbar-mtec { min-height: 75px; }
@@ -270,11 +311,13 @@
 </head>
 
 <body data-bs-theme="dark">
-  <!--- Botão de Início do Controle do offcanvas-->
-    <button class="btn btn-primary position-absolute" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasMenu" aria-controls="offCanvasMenu" >
-      <span class="navbar-toggler-icon"></span>
+  <!--- Botão para acionar o offcanvas -->
+  <div class="container mt-2">
+    <button class="btn btn-card-mtec" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasMenu" aria-controls="offCanvasMenu">
+      ☰ Informações & Links
     </button>
-  <!--- Botão de Final do Controle do offcanvas-->
+  </div>
+
   <nav class="navbar navbar-expand-lg navbar-mtec fixed-top text-uppercase">
     <div class="container">
       <a class="navbar-brand active" href="#">
@@ -347,7 +390,8 @@
       </button>
     </div>
   </section>
-    <!--Início Card-->
+
+  <!--Início Card-->
   <section class="container pb-4">
     <h2 class="titulo-ciano mb-4">Conheça as séries</h2>
     <div class="card-group">
@@ -387,20 +431,45 @@
   </section>
   <!--Fim Card-->
 
-     <!---Início da Barra Lateral-->
-     <div class="offcanvas offcanvas-start show" tabindex="-1" id="offCanvasMenu" aria-labelledby="offcanvasLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLabel">Menu Mtec</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <!--- Início da Barra Lateral -->
+  <div class="offcanvas offcanvas-start offcanvas-mtec" tabindex="-1" id="offCanvasMenu" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasLabel">Sobre o Mtec</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <div>
+        <p class="texto-suave mb-3">
+          O curso técnico de <strong>Informática para Internet</strong> integrado ao Ensino Médio prepara você para o mercado de trabalho com excelência na ETEC Prof. Milton Gazzetti.
+        </p>
+
+        <hr style="border-color: rgba(0, 229, 255, 0.2);">
+
+        <h6 class="titulo-ciano mb-3 text-uppercase small fw-bold">Links Úteis</h6>
+        
+        <!-- Lista de Atalhos com o Instagram Atualizado -->
+        <div class="list-group list-group-flush">
+          <a href="https://instagram.com/etecmiltongazzetti" target="_blank" class="list-group-item list-group-item-action">
+            📸 Instagram da ETEC Profº Milton Gazzetti - Presidente Venceslau
+          </a>
+          <a href="https://www.vestibulinhoetec.com.br" target="_blank" class="list-group-item list-group-item-action">
+            🎓 Site Oficial do Vestibulinho
+          </a>
+          <a href="https://www.cps.sp.gov.br" target="_blank" class="list-group-item list-group-item-action">
+            🏛️ Centro Paula Souza (CPS)
+          </a>
+        </div>
       </div>
-      <div class="offcanvas-body">
-        <p>O Mtec Informática para Internet ensina você a criar sites, sistemas e soluções digitais para o futuro.</p>
+
+      <div class="mt-4">
+        <div class="p-3 rounded mb-3" style="background-color: rgba(0, 229, 255, 0.08); border: 1px dashed var(--mtec-cyan);">
+          <small class="texto-suave d-block text-center">Presidente Venceslau - SP<br>Ensino Médio + Técnico</small>
+        </div>
+        <a href="https://vestibulinho.etec.sp.gov.br/home/" class="btn btn-matricula w-100" target="_blank" rel="noopener noreferrer">Inscreva-se Já</a>
       </div>
-     <!---<div class="offcanvas-bottom">
-         <p class="text-danger text-bg-light fw-bold p-3">Sair</p> -->
-      </div>
-     </div>
-     <!---Fim da Barra Lateral-->
+    </div>
+  </div>
+  <!--- Fim da Barra Lateral -->
 
   <main class="container pb-5 text-center">
     <h2 class="titulo-ciano">Mtec Informática para Internet</h2>
