@@ -311,15 +311,13 @@
 </head>
 
 <body data-bs-theme="dark">
-  <!--- Botão para acionar o offcanvas -->
-  <div class="container mt-2">
-    <button class="btn btn-card-mtec" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasMenu" aria-controls="offCanvasMenu">
-      ☰ Informações & Links
-    </button>
-  </div>
-
   <nav class="navbar navbar-expand-lg navbar-mtec fixed-top text-uppercase">
     <div class="container">
+      <!-- Botão para acionar o offcanvas integrado na Navbar -->
+      <button class="btn btn-card-mtec me-3 py-1 px-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasMenu" aria-controls="offCanvasMenu" title="Abrir Menu Lateral">
+        ☰
+      </button>
+
       <a class="navbar-brand active" href="#">
         <img src="images/Logoteste.png" alt="Lobo símbolo da Informática" class="logo-navbar">
       </a>
@@ -431,7 +429,7 @@
   </section>
   <!--Fim Card-->
 
-  <!--- Início da Barra Lateral -->
+  <!--- Início da Barra Lateral (Offcanvas) -->
   <div class="offcanvas offcanvas-start offcanvas-mtec" tabindex="-1" id="offCanvasMenu" aria-labelledby="offcanvasLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasLabel">Sobre o Mtec</h5>
@@ -447,15 +445,15 @@
 
         <h6 class="titulo-ciano mb-3 text-uppercase small fw-bold">Links Úteis</h6>
         
-        <!-- Lista de Atalhos com o Instagram Atualizado -->
+        <!-- Lista de Atalhos -->
         <div class="list-group list-group-flush">
-          <a href="https://instagram.com/etecmiltongazzetti" target="_blank" class="list-group-item list-group-item-action">
-            📸 Instagram da ETEC Profº Milton Gazzetti - Presidente Venceslau
+          <a href="https://instagram.com/etecmiltongazzetti" target="_blank" rel="noopener noreferrer" class="list-group-item list-group-item-action">
+            📸 Instagram (@etecmiltongazzetti)
           </a>
-          <a href="https://www.vestibulinhoetec.com.br" target="_blank" class="list-group-item list-group-item-action">
+          <a href="https://www.vestibulinhoetec.com.br" target="_blank" rel="noopener noreferrer" class="list-group-item list-group-item-action">
             🎓 Site Oficial do Vestibulinho
           </a>
-          <a href="https://www.cps.sp.gov.br" target="_blank" class="list-group-item list-group-item-action">
+          <a href="https://www.cps.sp.gov.br" target="_blank" rel="noopener noreferrer" class="list-group-item list-group-item-action">
             🏛️ Centro Paula Souza (CPS)
           </a>
         </div>
